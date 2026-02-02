@@ -1,4 +1,4 @@
-# Secrets - NIEMALS committen!
+# Secrets - NIEMALS committen (außer ins private Repo)!
 SECRETS.md
 secrets.md
 *.secret
@@ -6,8 +6,7 @@ secrets.md
 .env
 .env.*
 
-# Echte Config mit API Keys
-config/openclaw.json
+# config/openclaw.json ist jetzt ERLAUBT (Repo ist privat!)
 
 # Node modules
 node_modules/

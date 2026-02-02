@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "note": "Skye's echte Config - nur für privates Repo!"
+  },
+  "env": {
+    "vars": {
+      "BRAVE_API_KEY": "BSAIiFExM5f8iJgHTIe2ALOmRBkozuX"
+    }
+  },
+  "browser": {
+    "enabled": true,
+    "executablePath": "/usr/bin/google-chrome-stable",
+    "headless": false,
+    "noSandbox": true
+  },
+  "auth": {
+    "profiles": {
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "token"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/home/skye/.openclaw/workspace",
+      "memorySearch": {
+        "enabled": true,
+        "sources": ["memory", "sessions"],
+        "experimental": {
+          "sessionMemory": true
+        },
+        "provider": "openai",
+        "remote": {
+          "apiKey": "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"
+        },
+        "fallback": "local"
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "memoryFlush": {
+          "enabled": true
+        }
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "brave",
+        "apiKey": "BSAIiFExM5f8iJgHTIe2ALOmRBkozuX"
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "botToken": "8155806417:AAGEcXPD_h34ehPzxyn7BkfJwqniZWTv90o",
+      "allowFrom": ["7264689208"],
+      "groupPolicy": "allowlist",
+      "streamMode": "partial"
+    }
+  },
+  "talk": {
+    "apiKey": "64a79aa94b65013d0d1651c339fcf88b2b0d0f739d61050353f536eabe9482cb"
+  },
+  "gateway": {
+    "port": 52067,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "enabled": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "c45119ede6ed5da29cfa42396623d5a2fa4127469a480313",
+      "allowTailscale": true
+    },
+    "tailscale": {
+      "mode": "serve",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    },
+    "entries": {
+      "sag": {
+        "apiKey": "64a79aa94b65013d0d1651c339fcf88b2b0d0f739d61050353f536eabe9482cb"
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}

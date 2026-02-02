@@ -182,10 +182,12 @@ fi
 git config --global user.email "skye.spark03@gmail.com"
 git config --global user.name "Skye Spark"
 
-# Config Template kopieren
+# Echte Config kopieren (mit API Keys!)
 if [ ! -f ~/.openclaw/openclaw.json ]; then
-    cp workspace/config/openclaw.template.json ~/.openclaw/openclaw.json
-    echo "⚠️  Config erstellt - API Keys müssen noch eingetragen werden!"
+    cp workspace/config/openclaw.json ~/.openclaw/openclaw.json
+    echo "✅ Config mit API Keys kopiert!"
+else
+    echo "⚠️  Config existiert bereits - nicht überschrieben"
 fi
 EOF
 
@@ -205,23 +207,21 @@ echo ""
 echo "1. Zu Skye-User wechseln:"
 echo "   sudo su - $SKYE_USER"
 echo ""
-echo "2. API Keys eintragen:"
-echo "   nano ~/.openclaw/openclaw.json"
-echo "   (BRAVE_API_KEY, TELEGRAM_BOT_TOKEN, etc.)"
-echo ""
-echo "3. GitHub einloggen:"
+echo "2. GitHub einloggen:"
 echo "   gh auth login"
 echo "   (Account: skyespark03)"
 echo ""
-echo "4. Tailscale verbinden:"
+echo "3. Tailscale verbinden:"
 echo "   sudo tailscale up"
 echo ""
-echo "5. OpenClaw starten:"
+echo "4. OpenClaw starten:"
 echo "   openclaw gateway"
 echo ""
-echo "6. Als Service installieren (optional):"
+echo "5. Als Service installieren (optional):"
 echo "   openclaw gateway install"
 echo "   systemctl --user enable --now openclaw-gateway"
+echo ""
+echo "✅ API Keys sind schon in der Config!"
 echo ""
 echo -e "${BLUE}Viel Spaß mit Skye! 💜${NC}"
 echo ""
