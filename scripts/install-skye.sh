@@ -84,7 +84,7 @@ info "Aktualisiere Paketlisten..."
 apt update
 
 info "Installiere Basis-Tools..."
-apt install -y curl git wget ca-certificates gnupg
+apt install -y curl git wget ca-certificates gnupg build-essential
 
 ok "Basis-Tools installiert"
 
