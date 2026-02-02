@@ -1,0 +1,23 @@
+# Secrets - NIEMALS committen!
+SECRETS.md
+secrets.md
+*.secret
+*.key
+.env
+.env.*
+
+# Echte Config mit API Keys
+config/openclaw.json
+
+# Node modules
+node_modules/
+
+# Temp files
+*.tmp
+*.log
+.DS_Store
+
+# Editor
+*.swp
+*.swo
+*~

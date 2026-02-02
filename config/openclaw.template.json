@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "note": "Template für Skye's OpenClaw Config - API Keys müssen manuell eingetragen werden!"
+  },
+  "env": {
+    "vars": {
+      "BRAVE_API_KEY": ">>> BRAVE_API_KEY_HIER <<<"
+    }
+  },
+  "browser": {
+    "enabled": true,
+    "executablePath": "/usr/bin/google-chrome-stable",
+    "headless": true,
+    "noSandbox": true
+  },
+  "auth": {
+    "profiles": {
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "token"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/home/skye/.openclaw/workspace",
+      "memorySearch": {
+        "enabled": true,
+        "sources": ["memory", "sessions"],
+        "experimental": {
+          "sessionMemory": true
+        },
+        "provider": "openai",
+        "remote": {
+          "apiKey": ">>> OPENAI_API_KEY_HIER <<<"
+        },
+        "fallback": "local"
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "memoryFlush": {
+          "enabled": true
+        }
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "brave",
+        "apiKey": ">>> BRAVE_API_KEY_HIER <<<"
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "botToken": ">>> TELEGRAM_BOT_TOKEN_HIER <<<",
+      "allowFrom": ["7264689208"],
+      "groupPolicy": "allowlist",
+      "streamMode": "partial",
+      "network": {
+        "autoSelectFamily": false
+      }
+    }
+  },
+  "talk": {
+    "apiKey": ">>> ELEVENLABS_API_KEY_HIER <<<"
+  },
+  "gateway": {
+    "port": 52067,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "enabled": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": ">>> GATEWAY_AUTH_TOKEN_HIER <<<",
+      "allowTailscale": true
+    },
+    "tailscale": {
+      "mode": "serve",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    },
+    "entries": {
+      "sag": {
+        "apiKey": ">>> ELEVENLABS_API_KEY_HIER <<<"
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}
