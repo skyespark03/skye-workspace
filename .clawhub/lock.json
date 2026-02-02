@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "gmail": {
+      "version": "1.0.0",
+      "installedAt": 1770046683150
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1770046684334
+    }
+  }
+}
